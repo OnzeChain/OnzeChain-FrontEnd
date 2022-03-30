@@ -65,6 +65,10 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
       padding: '0 16px',
     },
   },
+  textLogo: {
+    fontSize: '2.5rem',
+    color: 'white',
+  },
   networkWrapper: {
     marginLeft: 16,
     padding: '0 12px',
@@ -266,21 +270,21 @@ const Header: React.FC = () => {
       text: 'Pool',
       id: 'pools-page-link',
     },
-    {
-      link: '/farm',
-      text: 'Farm',
-      id: 'farm-page-link',
-    },
-    {
-      link: '/dragons',
-      text: 'Dragon’s Lair',
-      id: 'dragons-page-link',
-    },
-    {
-      link: '/analytics',
-      text: 'Analytics',
-      id: 'analytics-page-link',
-    },
+    // {
+    //   link: '/farm',
+    //   text: 'Farm',
+    //   id: 'farm-page-link',
+    // },
+    // {
+    //   link: '/dragons',
+    //   text: 'Dragon’s Lair',
+    //   id: 'dragons-page-link',
+    // },
+    // {
+    //   link: '/analytics',
+    //   text: 'Analytics',
+    //   id: 'analytics-page-link',
+    // },
   ];
 
   const outLinks: any[] = [
@@ -317,8 +321,9 @@ const Header: React.FC = () => {
         pendingTransactions={pending}
         confirmedTransactions={confirmed}
       />
-      <Link to='/'>
-        <img src={mobileWindowSize ? QuickIcon : QuickLogo} alt='QuickLogo' />
+      <Link to='/' style={{ textDecoration: 'none' }}>
+        {/* <img src={mobileWindowSize ? QuickIcon : QuickLogo} alt='QuickLogo' /> */}
+        <Typography className={classes.textLogo}>OnzeSwap</Typography>
       </Link>
       {!tabletWindowSize && (
         <Box className={classes.mainMenu}>
