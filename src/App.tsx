@@ -114,7 +114,8 @@ const App: React.FC = () => {
                   <Switch>
                     <Route exact path='/'>
                       <PageLayout>
-                        <LandingPage />
+                        <SwapPage />
+                        {/* <LandingPage /> */}
                       </PageLayout>
                     </Route>
                     <Route exact path='/swap'>
@@ -127,7 +128,7 @@ const App: React.FC = () => {
                         <PoolsPage />
                       </PageLayout>
                     </Route>
-                    <Route exact path='/farm'>
+                    {/* <Route exact path='/farm'>
                       <PageLayout>
                         <FarmPage />
                       </PageLayout>
@@ -164,7 +165,7 @@ const App: React.FC = () => {
                       <PageLayout>
                         <AnalyticsPairDetails />
                       </PageLayout>
-                    </Route>
+                    </Route> */}
                   </Switch>
                 </Web3ReactManager>
               </Gelato>
