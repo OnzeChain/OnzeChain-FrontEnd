@@ -8,7 +8,7 @@ import { TOKEN_SEARCH, PAIR_SEARCH } from 'apollo/queries';
 import { getAllTokensOnUniswap, getAllPairsOnUniswap } from 'utils';
 import { GlobalConst } from 'constants/index';
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components';
-import { ChainId, Token } from '@uniswap/sdk';
+import { ChainId, Token } from '@onzechain/sdk';
 import { getAddress } from '@ethersproject/address';
 
 const useStyles = makeStyles(({ palette }) => ({

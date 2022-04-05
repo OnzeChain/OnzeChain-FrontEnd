@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Box, Typography, Divider, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Token } from '@uniswap/sdk';
+import { Token } from '@onzechain/sdk';
 import { TransactionResponse } from '@ethersproject/providers';
 import { useOldSyrupInfo, useSyrupInfo } from 'state/stake/hooks';
 import { unwrappedToken } from 'utils/wrappedCurrency';

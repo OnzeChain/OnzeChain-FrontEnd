@@ -12,7 +12,7 @@ import { useWalletModalToggle } from 'state/application/hooks';
 import { TransactionResponse } from '@ethersproject/providers';
 import { BigNumber } from '@ethersproject/bignumber';
 import ReactGA from 'react-ga';
-import { Currency, Token, ETHER, TokenAmount } from '@uniswap/sdk';
+import { Currency, Token, ETHER, TokenAmount } from '@onzechain/sdk';
 import { GlobalConst } from 'constants/index';
 import { useActiveWeb3React } from 'hooks';
 import { useRouterContract } from 'hooks/useContract';

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Pair } from '@uniswap/sdk';
+import { Pair } from '@onzechain/sdk';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';

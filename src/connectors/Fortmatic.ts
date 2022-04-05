@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk';
+import { ChainId } from '@onzechain/sdk';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import invariant from 'tiny-invariant';
 

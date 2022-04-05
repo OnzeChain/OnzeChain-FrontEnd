@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Currency } from '@uniswap/sdk';
+import { Currency } from '@onzechain/sdk';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useCurrencyBalance } from 'state/wallet/hooks';

@@ -1,6 +1,6 @@
 import { MaxUint256 } from '@ethersproject/constants';
 import { TransactionResponse } from '@ethersproject/providers';
-import { Trade, TokenAmount, CurrencyAmount, ETHER } from '@uniswap/sdk';
+import { Trade, TokenAmount, CurrencyAmount, ETHER } from '@onzechain/sdk';
 import { useCallback, useMemo } from 'react';
 import { GlobalConst } from 'constants/index';
 import { useTokenAllowance } from 'data/Allowances';

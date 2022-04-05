@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import { JSBI, TokenAmount } from '@uniswap/sdk';
+import { JSBI, TokenAmount } from '@onzechain/sdk';
 import { makeStyles } from '@material-ui/core/styles';
 import { StakingInfo } from 'state/stake/hooks';
 import { unwrappedToken } from 'utils/wrappedCurrency';

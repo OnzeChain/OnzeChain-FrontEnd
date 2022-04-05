@@ -8,7 +8,7 @@ import {
   Token,
   TokenAmount,
   Trade,
-} from '@uniswap/sdk';
+} from '@onzechain/sdk';
 import { ParsedQs } from 'qs';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
