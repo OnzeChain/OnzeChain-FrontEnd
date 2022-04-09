@@ -3,7 +3,7 @@ import { TransactionResponse } from '@ethersproject/providers';
 import { Box, Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useDualStakingInfo } from 'state/stake/hooks';
-import { TokenAmount, Pair } from '@onzechain/sdk';
+import { TokenAmount, Pair } from '@uniswap/sdk';
 import { unwrappedToken } from 'utils/wrappedCurrency';
 import {
   usePairContract,

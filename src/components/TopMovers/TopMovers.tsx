@@ -3,7 +3,7 @@ import { Box, Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { ArrowDropUp, ArrowDropDown } from '@material-ui/icons';
 import Skeleton from '@material-ui/lab/Skeleton';
-import { Token, ChainId } from '@onzechain/sdk';
+import { Token, ChainId } from '@uniswap/sdk';
 import { getAddress } from '@ethersproject/address';
 import { CurrencyLogo } from 'components';
 import { getEthPrice, getTopTokens, getPriceColor, formatNumber } from 'utils';

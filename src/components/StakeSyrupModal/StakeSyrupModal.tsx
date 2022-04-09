@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { TokenAmount } from '@onzechain/sdk';
+import { TokenAmount } from '@uniswap/sdk';
 import { TransactionResponse } from '@ethersproject/providers';
 import { CustomModal, ColoredSlider, NumericalInput } from 'components';
 import { useDerivedSyrupInfo, SyrupInfo } from 'state/stake/hooks';

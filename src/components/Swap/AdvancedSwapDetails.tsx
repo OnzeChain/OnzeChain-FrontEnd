@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@onzechain/sdk';
+import { Trade, TradeType } from '@uniswap/sdk';
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';

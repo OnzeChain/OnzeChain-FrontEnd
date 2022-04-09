@@ -3,7 +3,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { Box, Typography, Grid, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Skeleton } from '@material-ui/lab';
-import { ChainId, Token } from '@onzechain/sdk';
+import { ChainId, Token } from '@uniswap/sdk';
 import cx from 'classnames';
 import {
   shortenAddress,

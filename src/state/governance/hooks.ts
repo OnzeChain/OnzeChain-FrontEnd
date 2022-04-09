@@ -1,5 +1,5 @@
 import { GlobalValue } from 'constants/index';
-import { TokenAmount } from '@onzechain/sdk';
+import { TokenAmount } from '@uniswap/sdk';
 import { isAddress } from 'ethers/lib/utils';
 import { useGovernanceContract, useUniContract } from 'hooks/useContract';
 import {

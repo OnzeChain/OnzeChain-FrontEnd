@@ -65,10 +65,6 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
       padding: '0 16px',
     },
   },
-  textLogo: {
-    fontSize: '2.5rem',
-    color: 'white',
-  },
   networkWrapper: {
     marginLeft: 16,
     padding: '0 12px',
@@ -241,6 +237,7 @@ const Header: React.FC = () => {
   const { pathname } = useLocation();
   const { account } = useActiveWeb3React();
   const { ethereum } = window as any;
+  const { mumbai } = window as any;
   const { ENSName } = useENSName(account ?? undefined);
   const [openDetailMenu, setOpenDetailMenu] = useState(false);
   const theme = useTheme();
@@ -270,21 +267,21 @@ const Header: React.FC = () => {
       text: 'Pool',
       id: 'pools-page-link',
     },
-    // {
-    //   link: '/farm',
-    //   text: 'Farm',
-    //   id: 'farm-page-link',
-    // },
-    // {
-    //   link: '/dragons',
-    //   text: 'Dragon’s Lair',
-    //   id: 'dragons-page-link',
-    // },
-    // {
-    //   link: '/analytics',
-    //   text: 'Analytics',
-    //   id: 'analytics-page-link',
-    // },
+    {
+      link: '/farm',
+      text: 'Farm',
+      id: 'farm-page-link',
+    },
+    {
+      link: '/dragons',
+      text: 'Dragon’s Lair',
+      id: 'dragons-page-link',
+    },
+    {
+      link: '/analytics',
+      text: 'Analytics',
+      id: 'analytics-page-link',
+    },
   ];
 
   const outLinks: any[] = [
@@ -321,10 +318,10 @@ const Header: React.FC = () => {
         pendingTransactions={pending}
         confirmedTransactions={confirmed}
       />
-      <Link to='/' style={{ textDecoration: 'none' }}>
-        {/* <img src={mobileWindowSize ? QuickIcon : QuickLogo} alt='QuickLogo' /> */}
-        <Typography className={classes.textLogo}>OnzeSwap</Typography>
-      </Link>
+      {/* <Link to='/'>
+        <img src={mobileWindowSize ? QuickIcon : QuickLogo} alt='QuickLogo' />
+      </Link> */}
+      <Typography variant='subtitle2'>ONZECHAIN</Typography>
       {!tabletWindowSize && (
         <Box className={classes.mainMenu}>
           {menuItems.map((val, index) => (
@@ -444,7 +441,7 @@ const Header: React.FC = () => {
                 : classes.primary,
             )}
             onClick={() => {
-              if (!ethereum || isSupportedNetwork(ethereum)) {
+              if (!ethereum || mumbai(ethereum)) {
                 toggleWalletModal();
               }
             }}

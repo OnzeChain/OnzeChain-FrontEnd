@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Divider } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import { ChainId, Token } from '@onzechain/sdk';
+import { ChainId, Token } from '@uniswap/sdk';
 import { getAddress } from '@ethersproject/address';
 import { DoubleCurrencyLogo, CustomTable } from 'components';
 import { GlobalConst } from 'constants/index';

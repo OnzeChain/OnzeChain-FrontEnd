@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useWeb3React as useWeb3ReactCore } from '@web3-react/core';
 import { Web3Provider } from '@ethersproject/providers';
 import { Web3ReactContextInterface } from '@web3-react/core/dist/types';
-import { ChainId } from '@onzechain/sdk';
+import { ChainId } from '@uniswap/sdk';
 import { isMobile } from 'react-device-detect';
 import { injected, safeApp } from 'connectors';
 import { GlobalConst } from 'constants/index';

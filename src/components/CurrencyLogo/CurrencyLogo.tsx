@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@onzechain/sdk';
+import { Currency, ETHER, Token } from '@uniswap/sdk';
 import React, { useMemo } from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';

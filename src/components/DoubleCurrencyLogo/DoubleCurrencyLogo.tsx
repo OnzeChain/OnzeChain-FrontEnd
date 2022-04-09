@@ -1,4 +1,4 @@
-import { Currency } from '@onzechain/sdk';
+import { Currency } from '@uniswap/sdk';
 import React from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';

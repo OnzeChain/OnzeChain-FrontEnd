@@ -1,7 +1,7 @@
 import { ConnectorUpdate } from '@web3-react/types';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import invariant from 'tiny-invariant';
-import { ChainId } from '@onzechain/sdk';
+import { ChainId } from '@uniswap/sdk';
 import { Arkane } from '@arkane-network/web3-arkane-provider';
 import { ArkaneConnect, SecretType } from '@arkane-network/arkane-connect';
 import Web3 from 'web3';

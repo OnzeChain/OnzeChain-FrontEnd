@@ -5,7 +5,7 @@ import {
   TokenAmount,
   Price,
   Pair,
-} from '@onzechain/sdk';
+} from '@uniswap/sdk';
 import { useMemo, useEffect /** , useState */ } from 'react';
 import { usePair, usePairs } from 'data/Reserves';
 

@@ -1,6 +1,6 @@
 import { Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
-import { Percent } from '@onzechain/sdk';
+import { Percent } from '@uniswap/sdk';
 import React from 'react';
 import { GlobalConst } from '../../constants';
 import { warningSeverity } from '../../utils/prices';

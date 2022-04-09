@@ -1,4 +1,4 @@
-import { ChainId } from '@onzechain/sdk';
+import { ChainId } from '@uniswap/sdk';
 import React from 'react';
 import { Box, Typography, Button, CircularProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';

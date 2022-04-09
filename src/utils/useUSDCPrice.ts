@@ -6,7 +6,7 @@ import {
   Price,
   WETH,
   Token,
-} from '@onzechain/sdk';
+} from '@uniswap/sdk';
 import { useMemo } from 'react';
 import { PairState, usePairs, usePair } from 'data/Reserves';
 import { useActiveWeb3React } from 'hooks';

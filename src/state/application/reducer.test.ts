@@ -1,4 +1,4 @@
-import { ChainId } from '@onzechain/sdk';
+import { ChainId } from '@uniswap/sdk';
 import { createStore, Store } from 'redux';
 import {
   addPopup,

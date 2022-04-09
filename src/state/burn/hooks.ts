@@ -5,7 +5,7 @@ import {
   Pair,
   Percent,
   TokenAmount,
-} from '@onzechain/sdk';
+} from '@uniswap/sdk';
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { usePair } from 'data/Reserves';

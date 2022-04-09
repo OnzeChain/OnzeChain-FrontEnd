@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@onzechain/sdk';
+import { Token, TokenAmount } from '@uniswap/sdk';
 import { useMemo } from 'react';
 import { useAllTokenBalances } from 'state/wallet/hooks';
 

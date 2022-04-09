@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Box, Typography, Divider } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { getAddress } from '@ethersproject/address';
-import { ChainId, Token } from '@onzechain/sdk';
+import { ChainId, Token } from '@uniswap/sdk';
 import { CurrencyLogo, CustomTable } from 'components';
 import { GlobalConst } from 'constants/index';
 import { formatNumber, getFormattedPrice, getPriceColor } from 'utils';

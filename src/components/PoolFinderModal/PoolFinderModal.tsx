@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Currency, TokenAmount, ETHER, JSBI } from '@onzechain/sdk';
+import { Currency, TokenAmount, ETHER, JSBI } from '@uniswap/sdk';
 import { ArrowLeft, Plus } from 'react-feather';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';

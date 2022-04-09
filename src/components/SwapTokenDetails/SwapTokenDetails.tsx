@@ -16,7 +16,7 @@ import {
   formatNumber,
 } from 'utils';
 import { LineChart } from 'components';
-import { Token } from '@onzechain/sdk';
+import { Token } from '@uniswap/sdk';
 import dayjs from 'dayjs';
 import { unwrappedToken } from 'utils/wrappedCurrency';
 

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@onzechain/sdk';
+import { Currency, CurrencyAmount, Fraction, Percent } from '@uniswap/sdk';
 import React from 'react';
 import { Box, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';

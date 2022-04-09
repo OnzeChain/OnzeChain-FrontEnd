@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@onzechain/sdk';
+import { Currency, ETHER, Token } from '@uniswap/sdk';
 import React, {
   KeyboardEvent,
   RefObject,

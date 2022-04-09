@@ -5,6 +5,7 @@ import Chart from 'react-apexcharts';
 import moment from 'moment';
 import { useIsDarkMode } from 'state/user/hooks';
 import { formatCompact, formatNumber } from 'utils';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(({ palette }) =>
   createStyles({
@@ -155,6 +156,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
           }; border-radius: 12px 12px 0 0; background: ${
             dark ? 'rgba(0, 0, 0, 0.91)' : 'rgba(255, 255, 255, 0.91)'
           }; color: ${dark ? '#646464' : '#8D97A0'};">` +
+          // eslint-disable-next-line react/prop-types
           moment(dates[props.dataPointIndex] * 1000).format('MMM DD, YYYY') +
           '</span>' +
           `<span style="padding: 0.5rem; border: 1px solid ${
@@ -164,6 +166,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
           }; color: ${dark ? '#646464' : '#8D97A0'};"><b style="color: ${
             dark ? 'white' : 'rgba(0, 0, 0, 0.91)'
           };">$` +
+          // eslint-disable-next-line react/prop-types
           formatCompact(props.series[props.seriesIndex][props.dataPointIndex]) +
           '</b></span>' +
           '</div>'

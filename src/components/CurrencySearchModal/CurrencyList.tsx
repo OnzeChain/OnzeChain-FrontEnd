@@ -1,4 +1,4 @@
-import { currencyEquals, Token, Currency, ETHER } from '@onzechain/sdk';
+import { currencyEquals, Token, Currency, ETHER } from '@uniswap/sdk';
 import React, { useMemo, useCallback, MutableRefObject } from 'react';
 import { Box } from '@material-ui/core';
 import { FixedSizeList } from 'react-window';

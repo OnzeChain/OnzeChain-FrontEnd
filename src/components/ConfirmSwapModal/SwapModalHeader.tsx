@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@onzechain/sdk';
+import { Trade, TradeType } from '@uniswap/sdk';
 import React, { useMemo } from 'react';
 import { AlertTriangle } from 'react-feather';
 import { Box, Typography, Button } from '@material-ui/core';
