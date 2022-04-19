@@ -426,7 +426,7 @@ const Header: React.FC = () => {
         >
           <LightIcon />
         </Box>
-        {account  && (
+        {account && (
           <Box
             id='web3-status-connected'
             className={classes.accountDetails}
@@ -435,7 +435,7 @@ const Header: React.FC = () => {
             <Typography>{shortenAddress(account)}</Typography>
             <img src={WalletIcon} alt='Wallet' />
           </Box>
-        ) 
+        )
         // : (
         //   <Box
         //     className={cx(

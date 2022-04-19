@@ -72,7 +72,6 @@ const SwapTokenDetails: React.FC<{
     fetchSwapTokenPrice0();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tokenAddress]);
-
   return (
     <Box>
       <Box

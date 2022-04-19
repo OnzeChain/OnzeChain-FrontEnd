@@ -46,6 +46,7 @@ export interface AreaChartProps {
   width?: number | string;
   height?: number | string;
 }
+
 const AreaChart: React.FC<AreaChartProps> = ({
   backgroundColor = '#004ce6',
   categories = [],
@@ -55,6 +56,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
   width = 500,
   height = 200,
 }) => {
+ 
   const dark = useIsDarkMode();
 
   const strokeColor = '#00dced';
