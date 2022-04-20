@@ -56,7 +56,6 @@ const AreaChart: React.FC<AreaChartProps> = ({
   width = 500,
   height = 200,
 }) => {
- 
   const dark = useIsDarkMode();
 
   const strokeColor = '#00dced';

@@ -55,26 +55,18 @@ const SwapPage: React.FC = () => {
 
   return (
     <Box width='100%' mb={3} id='swap-page'>
-      <Box
-        mb={2}
-        display='flex'
-        alignItems='center'
-        justifyContent='space-between'
-        width='100%'
-      >
-        <Typography variant='h4'>Swap</Typography>
-        <Box className={classes.helpWrapper}>
-          <Typography variant='body2'>Help</Typography>
-          <HelpIcon />
+      {/* <Grid container spacing={4}> */}
+      {/* <Grid item xs={12} sm={12} md={5}> */}
+      <Box style={{ width: 550, margin: '0 auto' }}>
+        <Typography variant='h4' style={{ margin: '10px 0' }}>
+          Swap
+        </Typography>
+        <Box className={classes.wrapper}>
+          <SwapMain />
         </Box>
       </Box>
-      <Grid container spacing={4}>
-        <Grid item xs={12} sm={12} md={5}>
-          <Box className={classes.wrapper}>
-            <SwapMain />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={12} md={7}>
+      {/* </Grid> */}
+      {/* <Grid item xs={12} sm={12} md={7}>
           <Box
             display='flex'
             flexWrap='wrap'
@@ -97,8 +89,20 @@ const SwapPage: React.FC = () => {
               <LiquidityPools token1={token1} token2={token2} />
             </Box>
           )}
-        </Grid>
-      </Grid>
+        </Grid> */}
+      {/* </Grid> */}
+      <Box
+        mb={2}
+        display='flex'
+        alignItems='center'
+        justifyContent='end'
+        width='100%'
+      >
+        <Box className={classes.helpWrapper}>
+          <Typography variant='body2'>Help</Typography>
+          <HelpIcon />
+        </Box>
+      </Box>
     </Box>
   );
 };
