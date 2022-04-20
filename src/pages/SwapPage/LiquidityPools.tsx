@@ -3,7 +3,7 @@ import { Box, Divider, Typography, useMediaQuery } from '@material-ui/core';
 import { KeyboardArrowUp, KeyboardArrowDown } from '@material-ui/icons';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { getTokenPairs, getBulkPairData, getEthPrice } from 'utils';
-import { Token } from '@uniswap/sdk';
+import { Token } from '@onzechain/sdk';
 import LiquidityPoolRow from './LiquidityPoolRow';
 import { useAllTokens } from 'hooks/Tokens';
 

@@ -14,7 +14,7 @@ import useENSName from 'hooks/useENSName';
 import { WalletModal } from 'components';
 import { useActiveWeb3React } from 'hooks';
 import QuickIcon from 'assets/images/quickIcon.svg';
-import QuickLogo from 'assets/images/quickLogo.svg';
+import QuickLogo from 'assets/images/fulllogo_transparent_nobuffer.png';
 import { ReactComponent as ThreeDotIcon } from 'assets/images/ThreeDot.svg';
 import { ReactComponent as LightIcon } from 'assets/images/LightIcon.svg';
 import WalletIcon from 'assets/images/WalletIcon.png';
@@ -237,7 +237,6 @@ const Header: React.FC = () => {
   const { pathname } = useLocation();
   const { account } = useActiveWeb3React();
   const { ethereum } = window as any;
-  const { mumbai } = window as any;
   const { ENSName } = useENSName(account ?? undefined);
   const [openDetailMenu, setOpenDetailMenu] = useState(false);
   const theme = useTheme();
@@ -318,10 +317,13 @@ const Header: React.FC = () => {
         pendingTransactions={pending}
         confirmedTransactions={confirmed}
       />
-      {/* <Link to='/'>
-        <img src={mobileWindowSize ? QuickIcon : QuickLogo} alt='QuickLogo' />
-      </Link> */}
-      <Typography variant='subtitle2'>ONZECHAIN</Typography>
+      <Link to='/'>
+        <img
+          src={mobileWindowSize ? QuickIcon : QuickLogo}
+          alt='QuickLogo'
+          height={60}
+        />
+      </Link>
       {!tabletWindowSize && (
         <Box className={classes.mainMenu}>
           {menuItems.map((val, index) => (
@@ -441,7 +443,7 @@ const Header: React.FC = () => {
                 : classes.primary,
             )}
             onClick={() => {
-              if (!ethereum || mumbai(ethereum)) {
+              if (!ethereum || isSupportedNetwork(ethereum)) {
                 toggleWalletModal();
               }
             }}

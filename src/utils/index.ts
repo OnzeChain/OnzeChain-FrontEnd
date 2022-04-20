@@ -40,7 +40,7 @@ import {
   ETHER,
   Token,
   TokenAmount,
-} from '@uniswap/sdk';
+} from '@onzechain/sdk';
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import { formatUnits } from 'ethers/lib/utils';
 import { AddressZero } from '@ethersproject/constants';
@@ -2031,7 +2031,7 @@ export function getEarnedUSDDualFarm(stakingInfo: DualStakingInfo | undefined) {
 }
 
 export function isSupportedNetwork(ethereum: any) {
-  return Number(ethereum.chainId) === 137 || 80001;
+  return Number(ethereum.chainId) === 137;
 }
 
 export function getPageItemsToLoad(index: number, countsPerPage: number) {

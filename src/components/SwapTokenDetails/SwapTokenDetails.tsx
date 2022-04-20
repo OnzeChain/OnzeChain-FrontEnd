@@ -16,7 +16,7 @@ import {
   formatNumber,
 } from 'utils';
 import { LineChart } from 'components';
-import { Token } from '@uniswap/sdk';
+import { Token } from '@onzechain/sdk';
 import dayjs from 'dayjs';
 import { unwrappedToken } from 'utils/wrappedCurrency';
 
@@ -72,7 +72,6 @@ const SwapTokenDetails: React.FC<{
     fetchSwapTokenPrice0();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tokenAddress]);
-
   return (
     <Box>
       <Box

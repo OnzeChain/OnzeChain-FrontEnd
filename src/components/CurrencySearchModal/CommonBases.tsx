@@ -1,5 +1,11 @@
 import React from 'react';
-import { ChainId, Currency, currencyEquals, ETHER, Token } from '@uniswap/sdk';
+import {
+  ChainId,
+  Currency,
+  currencyEquals,
+  ETHER,
+  Token,
+} from '@onzechain/sdk';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { GlobalData } from 'constants/index';

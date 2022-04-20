@@ -6,7 +6,7 @@ import {
   Token,
   TokenAmount,
   WETH,
-} from '@uniswap/sdk';
+} from '@onzechain/sdk';
 
 export function wrappedCurrency(
   currency: Currency | undefined,

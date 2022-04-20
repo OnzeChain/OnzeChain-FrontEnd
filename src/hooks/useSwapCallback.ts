@@ -8,7 +8,7 @@ import {
   SwapParameters,
   Trade,
   TradeType,
-} from '@uniswap/sdk';
+} from '@onzechain/sdk';
 import { useMemo } from 'react';
 import { GlobalConst } from 'constants/index';
 import { useTransactionAdder } from 'state/transactions/hooks';

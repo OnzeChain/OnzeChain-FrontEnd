@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { Currency, CurrencyAmount, JSBI, Token, Trade } from '@uniswap/sdk';
+import { Currency, CurrencyAmount, JSBI, Token, Trade } from '@onzechain/sdk';
 import ReactGA from 'react-ga';
 import { ArrowDown } from 'react-feather';
 import { Box, Typography, Button, CircularProgress } from '@material-ui/core';

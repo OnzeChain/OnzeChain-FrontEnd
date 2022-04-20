@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token, WETH } from '@uniswap/sdk';
+import { ChainId, JSBI, Percent, Token, WETH } from '@onzechain/sdk';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import {
   injected,
@@ -39,12 +39,12 @@ export const GlobalConst = {
   addresses: {
     ROUTER_ADDRESS: {
       [ChainId.MATIC]: '0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff',
-      [ChainId.MUMBAI]: '0x8954AfA98594b838bda56FE4C12a09D7739D179b',
+      [ChainId.MUMBAI]: '0xE0D74A1303191E5EC7eb41713a08983B55Dd3BD6',
     }, //'0x6207A65a8bbc87dD02C3109D2c74a6bCE4af1C8c';//
     ZERO_ADDRESS: '0x0000000000000000000000000000000000000000',
     LAIR_ADDRESS: '0xf28164a485b0b2c90639e47b0f377b4a438a16b1',
     QUICK_ADDRESS: '0x831753DD7087CaC61aB5644b308642cc1c33Dc13',
-    FACTORY_ADDRESS: '0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32',
+    FACTORY_ADDRESS: '0x0032CaE5Dfe674F6CDCe6413e63A7e45009A50fF',
     GOVERNANCE_ADDRESS: '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F', //TODO: MATIC
     MERKLE_DISTRIBUTOR_ADDRESS: {
       // TODO: specify merkle distributor for mainnet

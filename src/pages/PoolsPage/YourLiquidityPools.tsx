@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Pair } from '@uniswap/sdk';
+import { Pair } from '@onzechain/sdk';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
@@ -70,7 +70,6 @@ const YourLiquidityPools: React.FC = () => {
   const allV2PairsWithLiquidity = v2Pairs
     .map(([, pair]) => pair)
     .filter((v2Pair): v2Pair is Pair => Boolean(v2Pair));
-
   return (
     <>
       {openPoolFinder && (
