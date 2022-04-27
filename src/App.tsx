@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core';
 import { Switch, Route } from 'react-router-dom';
+import { MoralisProvider } from 'react-moralis';
+
 import {
   ThemeProvider as MuiThemeProvider,
   CssBaseline,
@@ -85,7 +87,6 @@ function Updaters() {
 function Gelato({ children }: { children?: React.ReactNode }) {
   const { library, chainId, account } = useActiveWeb3React();
   const toggleWalletModal = useWalletModalToggle();
-
   return (
     <GelatoProvider
       library={library}
@@ -104,6 +105,10 @@ const App: React.FC = () => {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <Web3ProviderNetwork getLibrary={getLibrary}>
+      <MoralisProvider
+        serverUrl='https://j2lzx0fntrcp.usemoralis.com:2053/server'
+        appId='kYSntqFvmwVq5hYDQeMxXfI0pUIwVT4LSIWARBl2'
+      >
         <Provider store={store}>
           <Updaters />
           <Providers>
@@ -172,6 +177,8 @@ const App: React.FC = () => {
             </StyledThemeProvider>
           </Providers>
         </Provider>
+      </MoralisProvider>
+
       </Web3ProviderNetwork>
     </Web3ReactProvider>
   );
