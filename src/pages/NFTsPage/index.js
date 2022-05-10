@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '.';
+import NFTsPage from './NFTsPage';
 import { MoralisProvider } from 'react-moralis';
 import './index.css';
 import QuickStart from 'components/QuickStart';
@@ -17,7 +17,7 @@ const Application = () => {
     return (
       <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
         <MoralisDappProvider>
-          <App isServerInfo />
+          <NFTsPage isServerInfo />
         </MoralisDappProvider>
       </MoralisProvider>
     );
