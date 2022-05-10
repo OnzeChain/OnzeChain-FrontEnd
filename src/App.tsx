@@ -13,6 +13,7 @@ const FarmPage = lazy(() => import('./pages/FarmPage'));
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const PoolsPage = lazy(() => import('./pages/PoolsPage'));
 const SwapPage = lazy(() => import('./pages/SwapPage'));
+const NFTsPage = lazy(() => import('./pages/NFTsPage'));
 const AnalyticsTokenDetails = lazy(() =>
   import('./pages/AnalyticsTokenDetails'),
 );
@@ -126,6 +127,11 @@ const App: React.FC = () => {
                     <Route exact path='/pools'>
                       <PageLayout>
                         <PoolsPage />
+                      </PageLayout>
+                    </Route>
+                    <Route exact path='/nft'>
+                      <PageLayout>
+                        <NFTsPage />
                       </PageLayout>
                     </Route>
                     {/* <Route exact path='/farm'>
