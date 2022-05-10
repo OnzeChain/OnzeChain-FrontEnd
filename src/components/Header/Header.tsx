@@ -267,20 +267,25 @@ const Header: React.FC = () => {
       id: 'pools-page-link',
     },
     {
-      link: '/farm',
-      text: 'Farm',
-      id: 'farm-page-link',
+      link: '/nfts',
+      text: 'NFT Marketplace',
+      id: 'nfts-page-link',
     },
-    {
-      link: '/dragons',
-      text: 'Dragon’s Lair',
-      id: 'dragons-page-link',
-    },
-    {
-      link: '/analytics',
-      text: 'Analytics',
-      id: 'analytics-page-link',
-    },
+    // {
+    //   link: '/farm',
+    //   text: 'Farm',
+    //   id: 'farm-page-link',
+    // },
+    // {
+    //   link: '/dragons',
+    //   text: 'Dragon’s Lair',
+    //   id: 'dragons-page-link',
+    // },
+    // {
+    //   link: '/analytics',
+    //   text: 'Analytics',
+    //   id: 'analytics-page-link',
+    // },
   ];
 
   const outLinks: any[] = [

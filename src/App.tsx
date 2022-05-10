@@ -129,7 +129,7 @@ const App: React.FC = () => {
                         <PoolsPage />
                       </PageLayout>
                     </Route>
-                    <Route exact path='/nft'>
+                    <Route exact path='/nfts'>
                       <PageLayout>
                         <NFTsPage />
                       </PageLayout>
