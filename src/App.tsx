@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core';
 import { Switch, Route } from 'react-router-dom';
 import { MoralisProvider } from 'react-moralis';
+import { MoralisDappProvider } from './providers/MoralisDappProvider/MoralisDappProvider';
 
 import {
   ThemeProvider as MuiThemeProvider,
@@ -10,11 +11,15 @@ import {
 import { Provider } from 'react-redux';
 import { GelatoProvider } from '@gelatonetwork/limit-orders-react';
 import store from 'state';
+
 const DragonPage = lazy(() => import('./pages/DragonPage'));
 const FarmPage = lazy(() => import('./pages/FarmPage'));
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const PoolsPage = lazy(() => import('./pages/PoolsPage'));
 const SwapPage = lazy(() => import('./pages/SwapPage'));
+const NFTTokenIds = lazy(() =>
+  import('./components/NFTMarketplace/NFTTokenIds'),
+);
 const AnalyticsTokenDetails = lazy(() =>
   import('./pages/AnalyticsTokenDetails'),
 );
@@ -105,35 +110,42 @@ const App: React.FC = () => {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <Web3ProviderNetwork getLibrary={getLibrary}>
-      <MoralisProvider
-        serverUrl='https://j2lzx0fntrcp.usemoralis.com:2053/server'
-        appId='kYSntqFvmwVq5hYDQeMxXfI0pUIwVT4LSIWARBl2'
-      >
-        <Provider store={store}>
-          <Updaters />
-          <Providers>
-            <Popups />
-            <StyledThemeProvider>
-              <Gelato>
-                <Web3ReactManager>
-                  <Switch>
-                    <Route exact path='/'>
-                      <PageLayout>
-                        <SwapPage />
-                        {/* <LandingPage /> */}
-                      </PageLayout>
-                    </Route>
-                    <Route exact path='/swap'>
-                      <PageLayout>
-                        <SwapPage />
-                      </PageLayout>
-                    </Route>
-                    <Route exact path='/pools'>
-                      <PageLayout>
-                        <PoolsPage />
-                      </PageLayout>
-                    </Route>
-                    {/* <Route exact path='/farm'>
+        <MoralisProvider
+          serverUrl='https://j2lzx0fntrcp.usemoralis.com:2053/server'
+          appId='kYSntqFvmwVq5hYDQeMxXfI0pUIwVT4LSIWARBl2'
+        >
+          <MoralisDappProvider>
+            <Provider store={store}>
+              <Updaters />
+              <Providers>
+                <Popups />
+                <StyledThemeProvider>
+                  <Gelato>
+                    <Web3ReactManager>
+                      <Switch>
+                        <Route exact path='/'>
+                          <PageLayout>
+                            <SwapPage />
+                            {/* <LandingPage /> */}
+                          </PageLayout>
+                        </Route>
+                        <Route exact path='/swap'>
+                          <PageLayout>
+                            <SwapPage />
+                          </PageLayout>
+                        </Route>
+                        <Route exact path='/pools'>
+                          <PageLayout>
+                            <PoolsPage />
+                          </PageLayout>
+                        </Route>
+                        <Route path='/NFTMarketPlace'>
+                          <NFTTokenIds
+                          // inputValue={inputValue}
+                          // setInputValue={setInputValue}
+                          />
+                        </Route>
+                        {/* <Route exact path='/farm'>
                       <PageLayout>
                         <FarmPage />
                       </PageLayout>
@@ -171,14 +183,14 @@ const App: React.FC = () => {
                         <AnalyticsPairDetails />
                       </PageLayout>
                     </Route> */}
-                  </Switch>
-                </Web3ReactManager>
-              </Gelato>
-            </StyledThemeProvider>
-          </Providers>
-        </Provider>
-      </MoralisProvider>
-
+                      </Switch>
+                    </Web3ReactManager>
+                  </Gelato>
+                </StyledThemeProvider>
+              </Providers>
+            </Provider>
+          </MoralisDappProvider>
+        </MoralisProvider>
       </Web3ProviderNetwork>
     </Web3ReactProvider>
   );

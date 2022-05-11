@@ -266,6 +266,11 @@ const Header: React.FC = () => {
       text: 'Pool',
       id: 'pools-page-link',
     },
+    {
+      link: '/NFTMarketplace',
+      text: 'NFT Marketplace',
+      id: 'nft-page-link',
+    },
     // {
     //   link: '/farm',
     //   text: 'Farm',
