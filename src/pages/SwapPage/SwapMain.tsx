@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { ReactComponent as SettingsIcon } from 'assets/images/SettingsIcon.svg';
@@ -39,19 +39,19 @@ const SwapMain: React.FC = () => {
   const { palette } = useTheme();
   const [swapIndex, setSwapIndex] = useState(0);
   const [openSettingsModal, setOpenSettingsModal] = useState(false);
-
+  
   const parsedQuery = useParsedQueryString();
   const currency0 = useCurrency(
     parsedQuery && parsedQuery.currency0
-      ? (parsedQuery.currency0 as string)
-      : undefined,
-  );
-  const currency1 = useCurrency(
-    parsedQuery && parsedQuery.currency1
+    ? (parsedQuery.currency0 as string)
+    : undefined,
+    );
+    const currency1 = useCurrency(
+      parsedQuery && parsedQuery.currency1
       ? (parsedQuery.currency1 as string)
       : undefined,
-  );
-
+      );
+      
   return (
     <>
       {openSettingsModal && (
