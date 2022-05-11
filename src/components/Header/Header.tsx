@@ -266,6 +266,11 @@ const Header: React.FC = () => {
       text: 'Pool',
       id: 'pools-page-link',
     },
+    {
+      link: '/NFTMarketplace',
+      text: 'NFT Marketplace',
+      id: 'nft-page-link',
+    },
     // {
     //   link: '/farm',
     //   text: 'Farm',
@@ -425,7 +430,7 @@ const Header: React.FC = () => {
         >
           <LightIcon />
         </Box>
-        {account && (
+        {account ? (
           <Box
             id='web3-status-connected'
             className={classes.accountDetails}
@@ -435,41 +440,42 @@ const Header: React.FC = () => {
             <img src={WalletIcon} alt='Wallet' />
           </Box>
         )
-        // : (
-        //   <Box
-        //     className={cx(
-        //       classes.connectButton,
-        //       ethereum && !isSupportedNetwork(ethereum)
-        //         ? classes.danger
-        //         : classes.primary,
-        //     )}
-        //     onClick={() => {
-        //       if (!ethereum || isSupportedNetwork(ethereum)) {
-        //         toggleWalletModal();
-        //       }
-        //     }}
-        //   >
-        //     {ethereum && !isSupportedNetwork(ethereum)
-        //       ? 'Wrong Network'
-        //       : 'Connect Wallet'}
-        //     {ethereum && !isSupportedNetwork(ethereum) && (
-        //       <Box
-        //         position='absolute'
-        //         top={36}
-        //         width={272}
-        //         right={0}
-        //         paddingTop='18px'
-        //       >
-        //         <Box className={classes.wrongNetworkContent}>
-        //           <Typography variant='body2'>
-        //             Please switch your wallet to Polygon Network.
-        //           </Typography>
-        //           <Box onClick={addMaticToMetamask}>Switch to Polygon</Box>
-        //         </Box>
-        //       </Box>
-        //     )}
-        //   </Box>
-        // )
+        : (
+          <Box
+            className={cx(
+              classes.connectButton,
+              ethereum && !isSupportedNetwork(ethereum)
+                ? classes.danger
+                : classes.primary,
+            )}
+            onClick={() => {
+              // if (!ethereum || isSupportedNetwork(ethereum)) {
+                toggleWalletModal();
+              // }
+            }}
+          >
+            {/* {ethereum && !isSupportedNetwork(ethereum)
+              ? 'Wrong Network'
+              : 'Connect Wallet'} */}
+              Connect Wallet
+            {/* {ethereum && !isSupportedNetwork(ethereum) && (
+              <Box
+                position='absolute'
+                top={36}
+                width={272}
+                right={0}
+                paddingTop='18px'
+              >
+                <Box className={classes.wrongNetworkContent}>
+                  <Typography variant='body2'>
+                    Please switch your wallet to Polygon Network.
+                  </Typography>
+                  <Box onClick={addMaticToMetamask}>Switch to Polygon</Box>
+                </Box>
+              </Box>
+            )} */}
+          </Box>
+        )
         }
       </Box>
     </Box>

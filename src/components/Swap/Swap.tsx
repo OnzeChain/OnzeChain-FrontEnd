@@ -46,6 +46,9 @@ import { ReactComponent as PriceExchangeIcon } from 'assets/images/PriceExchange
 import { ReactComponent as ExchangeIcon } from 'assets/images/ExchangeIcon.svg';
 import { ReactComponent as EditIcon } from 'assets/images/EditIcon.svg';
 
+// Moralis
+import { useMoralis } from 'react-moralis';
+
 const useStyles = makeStyles(({ palette }) => ({
   exchangeSwap: {
     cursor: 'pointer',
@@ -127,6 +130,8 @@ const Swap: React.FC<{
   const [openSettingsModal, setOpenSettingsModal] = useState(false);
   const { palette } = useTheme();
   const { account } = useActiveWeb3React();
+  // Moralis
+  const { Moralis } = useMoralis();
   const { independentField, typedValue, recipient } = useSwapState();
   const {
     v1Trade,
@@ -388,19 +393,21 @@ const Swap: React.FC<{
   );
 
   const onSwap = () => {
-    if (showWrap && onWrap) {
-      onWrap();
-    } else if (isExpertMode) {
-      handleSwap();
-    } else {
-      setSwapState({
-        tradeToConfirm: trade,
-        attemptingTxn: false,
-        swapErrorMessage: undefined,
-        showConfirm: true,
-        txHash: undefined,
-      });
-    }
+    
+    swapWithThirdPartyDex()
+    // if (showWrap && onWrap) {
+    //   onWrap();
+    // } else if (isExpertMode) {
+    //   handleSwap();
+    // } else {
+    //   setSwapState({
+    //     tradeToConfirm: trade,
+    //     attemptingTxn: false,
+    //     swapErrorMessage: undefined,
+    //     showConfirm: true,
+    //     txHash: undefined,
+    //   });
+    // }
   };
 
   useEffect(() => {
@@ -439,6 +446,25 @@ const Swap: React.FC<{
       onUserInput(Field.INPUT, '');
     }
   }, [attemptingTxn, onUserInput, swapErrorMessage, tradeToConfirm, txHash]);
+
+  let dex;
+  const swapWithThirdPartyDex = async () => {
+    dex = Moralis.Plugins.oneInch;
+    const ADDRESS_FROM = currencies[Field.INPUT]?.address;
+    const ADDRESS_TO = currencies[Field.OUTPUT]?.address;
+
+    const options = {
+      chain: 'mumbai',
+      fromTokenAddress: ADDRESS_FROM,
+      toTokenAddress: ADDRESS_TO,
+      amount: Number(Moralis.Units.ETH('0.01')),
+      fromAddress: account,
+      slippage: 1,
+    };
+
+    var receipt = await dex.swap(options);
+    console.log('receipt', receipt);
+  };
 
   const handleSwap = useCallback(() => {
     if (
