@@ -442,12 +442,7 @@ const Header: React.FC = () => {
         )
         : (
           <Box
-            className={cx(
-              classes.connectButton,
-              ethereum && !isSupportedNetwork(ethereum)
-                ? classes.danger
-                : classes.primary,
-            )}
+            className={classes.primary}
             onClick={() => {
               // if (!ethereum || isSupportedNetwork(ethereum)) {
                 toggleWalletModal();
