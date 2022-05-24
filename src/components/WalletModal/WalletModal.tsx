@@ -19,9 +19,6 @@ import { AccountDetails, CustomModal } from 'components';
 import Option from './Option';
 import PendingView from './PendingView';
 
-// Moralis
-import { useMoralis } from "react-moralis";
-
 const useStyles = makeStyles(({ palette }) => ({
   closeIcon: {
     position: 'absolute',
@@ -75,6 +72,7 @@ const WalletModal: React.FC<WalletModalProps> = ({
   const [pendingWallet, setPendingWallet] = useState<
     AbstractConnector | undefined
   >();
+
   const [pendingError, setPendingError] = useState<boolean>();
 
   const walletModalOpen = useModalOpen(ApplicationModal.WALLET);
@@ -118,20 +116,6 @@ const WalletModal: React.FC<WalletModalProps> = ({
     connectorPrevious,
   ]);
 
-  // Moralis login
-  const { authenticate } = useMoralis();
-
-  const loginToMoralis = async () => {
-    await authenticate({ signingMessage: 'Log in using Moralis' })
-      .then(function(user) {
-        console.log('logged in user:', user);
-        console.log(user!.get('ethAddress'));
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  };
-
   const tryActivation = async (connector: AbstractConnector | undefined) => {
     let name = '';
     Object.keys(SUPPORTED_WALLETS).map((key) => {
@@ -156,15 +140,15 @@ const WalletModal: React.FC<WalletModalProps> = ({
     ) {
       connector.walletConnectProvider = undefined;
     }
-    
-    connector && loginToMoralis()
-      // activate(connector, undefined, true).catch((error) => {
-      //   if (error instanceof UnsupportedChainIdError) {
-      //     activate(connector); // a little janky...can't use setError because the connector isn't set
-      //   } else {
-      //     setPendingError(true);
-      //   }
-      // });
+
+    connector &&
+      activate(connector, undefined, true).catch((error) => {
+        if (error instanceof UnsupportedChainIdError) {
+          activate(connector); // a little janky...can't use setError because the connector isn't set
+        } else {
+          setPendingError(true);
+        }
+      });
   };
 
   // close wallet modal if fortmatic modal is active
