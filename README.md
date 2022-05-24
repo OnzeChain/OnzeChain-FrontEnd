@@ -1,39 +1,44 @@
-# QuickSwap Interface
+# Onzechain DEX
 
-An open source interface for QuickSwap -- a protocol for decentralized exchange on Polygon.
+## Install node modules
 
-Enabling users to:
+### `npm install`
 
-- Add and remove their liquidity positions on QuickSwap protocol
-- Swap tokens on QuickSwap protocol
-- Participate in single and dual mining programmes running on QuickSwap protocol
-- Participate in Dragon's lair running on QuickSwap protocol
-- Participate in Dragon's syrup running on QuickSwap protocol
+Installs the node modules required for the app.
 
-Useful links:
-- Website: [quickswap.exchange](https://quickswap.exchange/)
-- Info: [info.quickswap.exchange](https://info.quickswap.exchange)
-- Twitter: [@QuickswapDEX](https://twitter.com/QuickswapDEX)
-- Reddit: [/r/QuickSwap](https://www.reddit.com/r/QuickSwap)
-- Discord: [QuickSwap](https://discord.gg/KTgdBTnU)
+## Available Scripts
 
-## Accessing the QuickSwap Interface
+In the project directory, you can run:
 
-To access the QuickSwap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/QuickSwap/interface-v2/releases/latest),
-or visit [quickswap.exchange](https://quickswap.exchange).
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The QuickSwap interface is hosted on IPFS in a decentralized manner. `quickswap.exchange` just holds a CNAME record to the Cloudflare IPFS gateway. You can use [any](https://ipfs.github.io/public-gateway-checker/) public or private IPFS gateway supporting origin isolation to access QuickSwap interface if for some reason the Cloudflare gateway doesn't work for you
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Just go to `<your favorite public ipfs gateway>/ipns/quickswap.exchange`
+### `npm test`
 
-⚠️ Make sure the gateway supports origin isolation to avoid possible security issues: you should be redirected to URL that looks like `https://quickswap.exchange.<your gateway>`
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## License
+### `npm run build`
 
-[GNU GPL V3.0](./LICENSE)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Credits
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-To all the Ethereum and Polygon community
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
