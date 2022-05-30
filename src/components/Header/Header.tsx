@@ -434,20 +434,19 @@ const Header: React.FC = () => {
             <Typography>{shortenAddress(account)}</Typography>
             <img src={WalletIcon} alt='Wallet' />
           </Box>
-        )
-        : (
+        ) : (
           <Box
             className={cx(classes.connectButton, classes.primary)}
             onClick={() => {
               // if (!ethereum || isSupportedNetwork(ethereum)) {
-                toggleWalletModal();
+              toggleWalletModal();
               // }
             }}
           >
             {/* {ethereum && !isSupportedNetwork(ethereum)
               ? 'Wrong Network'
               : 'Connect Wallet'} */}
-              Connect Wallet
+            Connect Wallet
             {/* {ethereum && !isSupportedNetwork(ethereum) && (
               <Box
                 position='absolute'
@@ -465,8 +464,7 @@ const Header: React.FC = () => {
               </Box>
             )} */}
           </Box>
-        )
-        }
+        )}
       </Box>
     </Box>
   );
