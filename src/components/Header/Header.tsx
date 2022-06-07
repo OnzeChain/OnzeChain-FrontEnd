@@ -14,7 +14,7 @@ import useENSName from 'hooks/useENSName';
 import { WalletModal } from 'components';
 import { useActiveWeb3React } from 'hooks';
 import QuickIcon from 'assets/images/quickIcon.svg';
-import QuickLogo from 'assets/images/quickLogo.svg';
+import QuickLogo from 'assets/images/fulllogo_transparent_nobuffer.png';
 import { ReactComponent as ThreeDotIcon } from 'assets/images/ThreeDot.svg';
 import { ReactComponent as LightIcon } from 'assets/images/LightIcon.svg';
 import WalletIcon from 'assets/images/WalletIcon.png';
@@ -64,10 +64,6 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
     [breakpoints.down('xs')]: {
       padding: '0 16px',
     },
-  },
-  textLogo: {
-    fontSize: '2.5rem',
-    color: 'white',
   },
   networkWrapper: {
     marginLeft: 16,
@@ -270,11 +266,11 @@ const Header: React.FC = () => {
       text: 'Pool',
       id: 'pools-page-link',
     },
-    // {
-    //   link: '/farm',
-    //   text: 'Farm',
-    //   id: 'farm-page-link',
-    // },
+    {
+      link: '/nfts',
+      text: 'NFT Marketplace',
+      id: 'nft-app-link',
+    },
     // {
     //   link: '/dragons',
     //   text: 'Dragon’s Lair',
@@ -314,6 +310,14 @@ const Header: React.FC = () => {
     // },
   ];
 
+  const redirectToNFTPage = () => {
+    // window.location.replace('https://onzechain-nfts-j29jed7xu-onzechain.vercel.app/')
+    window.open(
+      'https://onzechain-nfts-j29jed7xu-onzechain.vercel.app/',
+      '_blank',
+    );
+  };
+
   return (
     <Box className={classes.header}>
       <WalletModal
@@ -321,19 +325,29 @@ const Header: React.FC = () => {
         pendingTransactions={pending}
         confirmedTransactions={confirmed}
       />
-      <Link to='/' style={{ textDecoration: 'none' }}>
-        {/* <img src={mobileWindowSize ? QuickIcon : QuickLogo} alt='QuickLogo' /> */}
-        <Typography className={classes.textLogo}>OnzeSwap</Typography>
+      <Link to='/'>
+        <img
+          src={mobileWindowSize ? QuickIcon : QuickLogo}
+          alt='QuickLogo'
+          height={60}
+        />
       </Link>
       {!tabletWindowSize && (
         <Box className={classes.mainMenu}>
           {menuItems.map((val, index) => (
             <Link
-              to={val.link}
+              to={val.link !== '/nfts' ? val.link : ''}
               key={index}
               id={val.id}
+              onClick={() =>
+                val.id === 'nft-app-link' ? redirectToNFTPage() : {}
+              }
               className={
-                pathname.indexOf(val.link) > -1 ? 'active' : 'menuItem'
+                val.link === '/swap' && pathname === '/'
+                  ? 'active'
+                  : pathname.indexOf(val.link) > -1
+                  ? 'active'
+                  : 'menuItem'
               }
             >
               <Typography variant='body2'>{val.text}</Typography>
@@ -364,10 +378,17 @@ const Header: React.FC = () => {
           <Box className={classes.mobileMenu}>
             {menuItems.slice(0, 4).map((val, index) => (
               <Link
-                to={val.link}
+                to={val.link !== '/nfts' ? val.link : ''}
                 key={index}
                 className={
-                  pathname.indexOf(val.link) > -1 ? 'active' : 'menuItem'
+                  val.link === '/swap' && pathname === '/'
+                    ? 'active'
+                    : pathname.indexOf(val.link) > -1
+                    ? 'active'
+                    : 'menuItem'
+                }
+                onClick={() =>
+                  val.id === 'nft-app-link' ? redirectToNFTPage() : {}
                 }
               >
                 <Typography variant='body2'>{val.text}</Typography>
@@ -426,7 +447,7 @@ const Header: React.FC = () => {
         >
           <LightIcon />
         </Box>
-        {account && (!ethereum || isSupportedNetwork(ethereum)) ? (
+        {account ? (
           <Box
             id='web3-status-connected'
             className={classes.accountDetails}
@@ -437,22 +458,18 @@ const Header: React.FC = () => {
           </Box>
         ) : (
           <Box
-            className={cx(
-              classes.connectButton,
-              ethereum && !isSupportedNetwork(ethereum)
-                ? classes.danger
-                : classes.primary,
-            )}
+            className={cx(classes.connectButton, classes.primary)}
             onClick={() => {
-              if (!ethereum || isSupportedNetwork(ethereum)) {
-                toggleWalletModal();
-              }
+              // if (!ethereum || isSupportedNetwork(ethereum)) {
+              toggleWalletModal();
+              // }
             }}
           >
-            {ethereum && !isSupportedNetwork(ethereum)
+            {/* {ethereum && !isSupportedNetwork(ethereum)
               ? 'Wrong Network'
-              : 'Connect Wallet'}
-            {ethereum && !isSupportedNetwork(ethereum) && (
+              : 'Connect Wallet'} */}
+            Connect Wallet
+            {/* {ethereum && !isSupportedNetwork(ethereum) && (
               <Box
                 position='absolute'
                 top={36}
@@ -467,7 +484,7 @@ const Header: React.FC = () => {
                   <Box onClick={addMaticToMetamask}>Switch to Polygon</Box>
                 </Box>
               </Box>
-            )}
+            )} */}
           </Box>
         )}
       </Box>

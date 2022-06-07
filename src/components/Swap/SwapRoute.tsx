@@ -1,4 +1,4 @@
-import { Trade } from '@uniswap/sdk';
+import { Trade } from '@onzechain/sdk';
 import { Fragment, memo } from 'react';
 import { ChevronRight } from 'react-feather';
 import { Box, Typography } from '@material-ui/core';

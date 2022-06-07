@@ -40,7 +40,7 @@ import {
   ETHER,
   Token,
   TokenAmount,
-} from '@uniswap/sdk';
+} from '@onzechain/sdk';
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import { formatUnits } from 'ethers/lib/utils';
 import { AddressZero } from '@ethersproject/constants';

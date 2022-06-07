@@ -8,7 +8,7 @@ import {
   Percent,
   Price,
   TokenAmount,
-} from '@uniswap/sdk';
+} from '@onzechain/sdk';
 import { useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PairState, usePair } from 'data/Reserves';

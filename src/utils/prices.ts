@@ -6,7 +6,7 @@ import {
   Percent,
   TokenAmount,
   Trade,
-} from '@uniswap/sdk';
+} from '@onzechain/sdk';
 import { Field } from 'state/swap/actions';
 import { basisPointsToPercent } from 'utils';
 

@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
-import { Currency } from '@uniswap/sdk';
+import { Currency } from '@onzechain/sdk';
 import { useTheme } from '@material-ui/core/styles';
 import Motif from 'assets/images/Motif.svg';
 import BuyWithFiat from 'assets/images/featured/BuywithFiat.svg';

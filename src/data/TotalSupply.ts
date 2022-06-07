@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Token, TokenAmount } from '@uniswap/sdk';
+import { Token, TokenAmount } from '@onzechain/sdk';
 import { Interface } from '@ethersproject/abi';
 import { useTokenContract } from 'hooks/useContract';
 import {

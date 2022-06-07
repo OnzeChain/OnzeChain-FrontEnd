@@ -1,4 +1,4 @@
-import { CurrencyAmount, ETHER, Token } from '@uniswap/sdk';
+import { CurrencyAmount, ETHER, Token } from '@onzechain/sdk';
 import React from 'react';
 import {
   Box,

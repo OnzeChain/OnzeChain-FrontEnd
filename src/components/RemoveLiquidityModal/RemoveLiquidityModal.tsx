@@ -3,7 +3,7 @@ import { Contract } from '@ethersproject/contracts';
 import { ArrowLeft, ArrowDown } from 'react-feather';
 import { Box, Typography, Button } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Currency, ETHER, JSBI, Percent } from '@uniswap/sdk';
+import { Currency, ETHER, JSBI, Percent } from '@onzechain/sdk';
 import ReactGA from 'react-ga';
 import { BigNumber } from '@ethersproject/bignumber';
 import { TransactionResponse } from '@ethersproject/providers';
