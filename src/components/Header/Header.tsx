@@ -266,11 +266,11 @@ const Header: React.FC = () => {
       text: 'Pool',
       id: 'pools-page-link',
     },
-    // {
-    //   link: '/farm',
-    //   text: 'Farm',
-    //   id: 'farm-page-link',
-    // },
+    {
+      link: '/nfts',
+      text: 'NFT Marketplace',
+      id: 'nft-app-link',
+    },
     // {
     //   link: '/dragons',
     //   text: 'Dragon’s Lair',
@@ -310,6 +310,14 @@ const Header: React.FC = () => {
     // },
   ];
 
+  const redirectToNFTPage = () => {
+    // window.location.replace('https://onzechain-nfts-j29jed7xu-onzechain.vercel.app/')
+    window.open(
+      'https://onzechain-nfts-j29jed7xu-onzechain.vercel.app/',
+      '_blank',
+    );
+  };
+
   return (
     <Box className={classes.header}>
       <WalletModal
@@ -328,11 +336,18 @@ const Header: React.FC = () => {
         <Box className={classes.mainMenu}>
           {menuItems.map((val, index) => (
             <Link
-              to={val.link}
+              to={val.link !== '/nfts' ? val.link : ''}
               key={index}
               id={val.id}
+              onClick={() =>
+                val.id === 'nft-app-link' ? redirectToNFTPage() : {}
+              }
               className={
-                pathname.indexOf(val.link) > -1 ? 'active' : 'menuItem'
+                val.link === '/swap' && pathname === '/'
+                  ? 'active'
+                  : pathname.indexOf(val.link) > -1
+                  ? 'active'
+                  : 'menuItem'
               }
             >
               <Typography variant='body2'>{val.text}</Typography>
@@ -363,10 +378,17 @@ const Header: React.FC = () => {
           <Box className={classes.mobileMenu}>
             {menuItems.slice(0, 4).map((val, index) => (
               <Link
-                to={val.link}
+                to={val.link !== '/nfts' ? val.link : ''}
                 key={index}
                 className={
-                  pathname.indexOf(val.link) > -1 ? 'active' : 'menuItem'
+                  val.link === '/swap' && pathname === '/'
+                    ? 'active'
+                    : pathname.indexOf(val.link) > -1
+                    ? 'active'
+                    : 'menuItem'
+                }
+                onClick={() =>
+                  val.id === 'nft-app-link' ? redirectToNFTPage() : {}
                 }
               >
                 <Typography variant='body2'>{val.text}</Typography>
@@ -434,20 +456,19 @@ const Header: React.FC = () => {
             <Typography>{shortenAddress(account)}</Typography>
             <img src={WalletIcon} alt='Wallet' />
           </Box>
-        )
-        : (
+        ) : (
           <Box
             className={cx(classes.connectButton, classes.primary)}
             onClick={() => {
               // if (!ethereum || isSupportedNetwork(ethereum)) {
-                toggleWalletModal();
+              toggleWalletModal();
               // }
             }}
           >
             {/* {ethereum && !isSupportedNetwork(ethereum)
               ? 'Wrong Network'
               : 'Connect Wallet'} */}
-              Connect Wallet
+            Connect Wallet
             {/* {ethereum && !isSupportedNetwork(ethereum) && (
               <Box
                 position='absolute'
@@ -465,8 +486,7 @@ const Header: React.FC = () => {
               </Box>
             )} */}
           </Box>
-        )
-        }
+        )}
       </Box>
     </Box>
   );
