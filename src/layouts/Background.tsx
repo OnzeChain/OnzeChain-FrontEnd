@@ -32,10 +32,7 @@ const Background: React.FC<{ fallback: boolean | undefined }> = ({
   return (
     <>
       <Box className={classes.heroBkg}>
-        <img
-          src={pathname === '/' ? HeroBkg : HeroBkg1}
-          alt='Hero Background'
-        />
+        <img src={HeroBkg} alt='Hero Background' />
       </Box>
     </>
   );
