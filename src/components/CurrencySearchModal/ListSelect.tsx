@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { memo, useCallback, useMemo, useState } from 'react';
 import { ArrowLeft } from 'react-feather';
 import ReactGA from 'react-ga';

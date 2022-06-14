@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { useEffect, useState, useCallback } from 'react';
 import { useWeb3React as useWeb3ReactCore } from '@web3-react/core';
 import { Web3Provider } from '@ethersproject/providers';

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { Currency, CurrencyAmount, JSBI, Token, Trade } from '@onzechain/sdk';
 import ReactGA from 'react-ga';

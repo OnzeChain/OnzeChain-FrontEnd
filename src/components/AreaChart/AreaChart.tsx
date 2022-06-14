@@ -6,6 +6,8 @@ import moment from 'moment';
 import { useIsDarkMode } from 'state/user/hooks';
 import { formatCompact, formatNumber } from 'utils';
 
+/* eslint react/prop-types: 0 */
+
 const useStyles = makeStyles(({ palette }) =>
   createStyles({
     chartContainer: {

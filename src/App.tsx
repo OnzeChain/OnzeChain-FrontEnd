@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { lazy, Suspense } from 'react';
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core';
 import { Switch, Route } from 'react-router-dom';
@@ -51,13 +53,17 @@ const Web3ProviderNetwork = createWeb3ReactRoot(
   GlobalConst.utils.NetworkContextName,
 );
 
-const ThemeProvider: React.FC = ({ children }) => {
+const ThemeProvider: React.FC = ({
+  children,
+}: {
+  children?: React.ReactNode;
+}) => {
   const theme = mainTheme;
 
   return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
 };
 
-const Providers: React.FC = ({ children }) => {
+const Providers: React.FC = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div>
       <Suspense fallback={<Background fallback={true} />}>
