@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { currencyEquals, Token, Currency, ETHER } from '@onzechain/sdk';
 import React, { useMemo, useCallback, MutableRefObject } from 'react';
 import { Box } from '@material-ui/core';
